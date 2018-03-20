@@ -24,12 +24,16 @@ Nesta disciplina, Github + Travis CI serão utilizados para o desenvolvimento e 
 2. Peça um desconto de estudante [aqui](https://education.github.com/discount_requests/new).
 3. [Adicione uma chave pública SSH criada no seu computador no Github](https://git-scm.com/book/pt-br/v1/Git-no-Servidor-Gerando-Sua-Chave-Pública-SSH).
 4. Crie uma conta no Travis CI usando o mesmo usuário do Github, autorizando o acesso à aplicação.
-5. Use o _link_ disponibilizado no Google Classroom para entrar na tarefa do Github Classroom. 
-6. Volte ao Travis CI, clique no ícone do canto superior direito. Selecione _ufpelaoc2_ na barra da esquerda e ative a chave do repositório que está listado.
-7. Clone o repositório que será criado com esta primeira tarefa (xxx deve ser substituído pelo seu nome de usuário no Github, indo na página do repositório também é possível encontrá-lo):
-    * _git clone git@github.com/ufpelsisop/tutaoc2_2017_2-xxxx_
-8. Modifique este README.md com seus dados.
-9. Faça seu primeiro commit e envie para o Github:
+5. Use o _link_ disponibilizado no Google Classroom para entrar na tarefa do Github Classroom. Aceite a tarefa, um repositório será criado.
+6. Volte ao Travis CI, clique no ícone do canto superior direito. 
+![Figura 1](figs/fig1.png)
+7. Selecione a organização correta na barra da esquerda (dependendo da disciplina -- no exemplo está uma organização que não é que deve ser usada).
+![Figura 2](figs/fig2.png)
+8. Ative a chave do repositório que está listado. 
+![Figura 3](figs/fig3.png)
+9. Clone o repositório que será criado com esta primeira tarefa, preferencialmente usando SSH. O _link_ para ser usado está disponível no próprio repositório no Github.
+11. Modifique este README.md com seus dados.
+12. Faça seu primeiro commit e envie para o Github:
     * _git add README.md_
     * _git commit -m "Preenchi dados para professor"_
     * _git push -u origin master_ 
@@ -45,7 +49,7 @@ Nesta disciplina, Github + Travis CI serão utilizados para o desenvolvimento e 
     * _git add fatorial.c_ 
     * _git commit -m "sua mensagem aqui"_
     * _git push -u origin master_
-4. O resultado do _build_ no Travis CI serão enviados para o professor. Também estão disponíveis em https://travis-ci.com/ufpelaoc2/tucaoc2_2017_2-xxxx , onde xxxx é seu usuário do Github.
+4. O resultado do _build_ no Travis CI serão enviados para o professor. Também estão disponíveis no seu _dashboard_ do Travis CI.
 
 __IMPORTANTE__: você pode fazer quantos commits locais você quiser. Somente com o _push_ que serão enviados para o servidor. Não sobrecarregue o Travis CI e o professor com _builds_ que você sabe que não funcionam. Abuso do Travis CI pode levar à revogação da conta. 
 
