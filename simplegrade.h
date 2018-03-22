@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #define KNRM  "\x1B[0m"
 #define KRED  "\x1B[31m"
@@ -35,11 +36,13 @@ void GRADEME(){
 	if (!maxgrade)
 		maxgrade = currmaxgrade;
 
+	int tmp = (int) ((grade / (float) maxgrade)*100);
+
 	if (grade < maxgrade*.7){
-		printf("You did %s %d %s out of %d\n", KRED, grade, KNRM, maxgrade);
+		printf("You did %s %d %s out of %d -- grade %d/100\n", KRED, grade, KNRM, maxgrade, tmp);
 	}
 	else{
-		printf("You did %s %d %s out of %d\n", KGRN, grade, KNRM, maxgrade);
+		printf("You did %s %d %s out of %d -- grade %d/100\n", KGRN, grade, KNRM, maxgrade, tmp);
 	}
 }
 
@@ -123,6 +126,20 @@ void isLesserThan(int num, int value, int points) {
 		printf("%s        NOT PASSED!\n        got: %d < %d %s\n",KRED, num, value, KNRM);
 	}
 }
+
+/* because floating points ops are not commutative nor associative */
+void isNear(float num, float value, int decimals, int points){
+	currmaxgrade+=points;
+	float diff = fabs(num - value);
+	/* check for nearest integers */
+	if (diff <= pow(10,(-decimals))) {
+		printf("%s        PASSED!\n%s", KGRN, KNRM);
+		grade+=points;
+	}else {
+		printf("%s        NOT PASSED!\n        got: %f , expecting %f %s\n",KRED, num, value, KNRM);
+	}
+}
+
 
 
 #endif //_SIMPLETEST_H

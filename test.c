@@ -1,5 +1,5 @@
 #include "fatorial.h"
-#include "simpletest.h"
+#include "simplegrade.h"
 
 
 int main(int argc, char ** argv){

@@ -1,11 +1,13 @@
 CC=gcc
 
-CFLAGS=-std=c11 
+CFLAGS=-std=c11 -Wall -Werror
+LDFLAGS=-lm
 
 all: grade
 
-fatorial: fatorial.c test.c
-	$(CC) -o fatorial fatorial.c test.c
+fatorial.o: fatorial.c
+
+fatorial: fatorial.o test.c
 
 grade: fatorial
 	./fatorial
